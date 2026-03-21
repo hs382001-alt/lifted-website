@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifted Athletes - Partner With Us</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-link img {
+            height: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF7E00;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #999999;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .benefit-card {
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #FF7E00;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            color: #FF7E00;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .benefit-card p {
+            color: #999999;
+            font-size: 0.95rem;
+        }
+
+        .commission-tiers {
+            background: #111111;
+            border: 2px solid #222222;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .commission-tiers h2 {
+            text-align: center;
+            color: #FF7E00;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tier {
+            background: #0a0a0a;
+            border: 1px solid #222222;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .tier-label {
+            color: #FF7E00;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-rate {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .tier-desc {
+            color: #666666;
+            font-size: 0.85rem;
+        }
+
+        .booking-section {
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            color: #FF7E00;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .booking-section p {
+            text-align: center;
+            color: #999999;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 5rem 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo-link">
+                <img src="images/logo-text.png" alt="Lifted Logo">
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/collab">Become an Athlete</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Become a Lifted Athlete</h1>
+            <p>Partner with us to inspire your community, earn competitive commissions, and shape the future of fitness accountability.</p>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Competitive Revenue Share</h3>
+                <p>Earn up to 50% commission on every conversion. The more you grow, the more you earn.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🎨</div>
+                <h3>Exclusive Custom Character</h3>
+                <p>Get your own branded character in-app. Your followers unlock it exclusively through your code.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📱</div>
+                <h3>Social Media Exposure</h3>
+                <p>Featured across our Instagram, TikTok, and YouTube Shorts. We'll amplify your reach to our growing community.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h3>Product Partnership</h3>
+                <p>Direct input on new features and updates. Help us build what your audience actually wants.</p>
+            </div>
+        </div>
+
+        <div class="commission-tiers">
+            <h2>Commission Structure</h2>
+            <div class="tiers">
+                <div class="tier">
+                    <div class="tier-label">STARTER</div>
+                    <div class="tier-rate">30%</div>
+                    <div class="tier-desc">1-5 conversions/month</div>
+                </div>
+                <div class="tier">
+                    <div class="tier-label">GROWING</div>
+                    <div class="tier-rate">40%</div>
+                    <div class="tier-desc">6-20 conversions/month</div>
+                </div>
+                <div class="tier">
+                    <div class="tier-label">ELITE</div>
+                    <div class="tier-rate">50%</div>
+                    <div class="tier-desc">21+ conversions/month</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <h2>Ready to Partner?</h2>
+            <p>Book a quick call to discuss the partnership, get your custom character designed, and start earning.</p>
+            
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/liftedappios/30min?primary_color=fd931f" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </div>
+    </div>
+</body>
+</html>
