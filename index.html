@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifted - Group Fitness Accountability</title>
-    <meta name="description" content="Group accountability with real consequences. Stay consistent or start over.">
-    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Lifted - Fitness Accountability Done Right</title>
+    <link rel="icon" type="image/png" href="assets/app-icon.png">
     <style>
         * {
             margin: 0;
@@ -14,614 +13,327 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            background: #000;
-            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1410 0%, #2d2419 100%);
+            color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.9);
+        .navbar {
+            background: rgba(26, 20, 16, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #1A1A1A;
+            border-bottom: 1px solid rgba(253, 147, 31, 0.1);
         }
 
-        nav .nav-content {
-            max-width: 1400px;
+        .nav-content {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        nav .logo img {
-            height: 35px;
-            width: auto;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fd931f;
+            text-decoration: none;
         }
 
-        nav .nav-cta {
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
         }
 
-        nav .nav-cta img {
-            height: 40px;
-            width: auto;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        nav .nav-cta:hover {
-            transform: translateY(-2px);
+        .nav-links a:hover {
+            color: #fd931f;
         }
 
-        nav .nav-cta:hover img {
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)) brightness(1.05);
-        }
-
-        nav .nav-cta:active {
-            transform: translateY(0);
-        }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 8rem 2rem 4rem;
+            padding: 2rem;
             position: relative;
-            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(253, 147, 31, 0.15) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
         }
 
         .hero-content {
-            max-width: 1200px;
-            z-index: 2;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            font-weight: 700;
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 1.5rem;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero h1 {
-            background: linear-gradient(135deg, #fff 0%, #fc9220 100%);
+            background: linear-gradient(135deg, #fd931f 0%, #ffa940 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: #999;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .cta-button {
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .cta-button img {
-            height: 60px;
-            width: auto;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-
-        .cta-button:hover img {
-            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4)) brightness(1.05);
-        }
-
-        .cta-button:active {
-            transform: translateY(-1px);
-        }
-
-        .hero-phone {
-            margin-top: 4rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero-phone img {
-            max-width: 600px;
-            height: auto;
-            filter: drop-shadow(0 20px 60px rgba(252, 146, 32, 0.3));
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Feature Sections */
-        .feature-section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease;
-        }
-
-        .feature-section.reverse {
-            direction: rtl;
-        }
-
-        .feature-section.reverse > * {
-            direction: ltr;
-        }
-
-        .feature-content h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
-        .feature-content p {
-            font-size: 1.2rem;
-            color: #999;
-            line-height: 1.8;
+        .tagline {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 3rem;
+            font-weight: 300;
         }
 
-        .feature-image {
+        .cta-buttons {
             display: flex;
+            gap: 1rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .feature-image img {
-            max-width: 350px;
-            width: 100%;
-            height: auto;
-            border-radius: 30px;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 3rem auto 0;
-        }
-
-        .stat-card {
-            background: #1A1A1A;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            border: 1px solid #2a2a2a;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            border-color: #fc9220;
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fc9220;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 1.1rem;
-            color: #999;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 2rem;
-            text-align: center;
+        .btn-primary {
+            background: linear-gradient(135deg, #fd931f 0%, #ffa940 100%);
+            color: #1a1410;
+            box-shadow: 0 4px 15px rgba(253, 147, 31, 0.4);
         }
 
-        .pricing h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(253, 147, 31, 0.6);
         }
 
-        .pricing-subtitle {
-            font-size: 1.2rem;
-            color: #999;
-            margin-bottom: 4rem;
+        .btn-secondary {
+            background: transparent;
+            color: #fd931f;
+            border: 2px solid #fd931f;
         }
 
-        .pricing-grid {
+        .btn-secondary:hover {
+            background: rgba(253, 147, 31, 0.1);
+        }
+
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
+            margin-top: 3rem;
         }
 
-        .pricing-card {
-            background: #1A1A1A;
-            padding: 3rem 2rem;
+        .feature-card {
+            background: rgba(42, 37, 32, 0.6);
+            border: 1px solid rgba(253, 147, 31, 0.2);
             border-radius: 20px;
-            border: 2px solid #2a2a2a;
-            transition: all 0.3s ease;
-            text-align: left;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .pricing-card:hover {
-            border-color: #fc9220;
-            transform: scale(1.03);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(253, 147, 31, 0.5);
         }
 
-        .pricing-card.featured {
-            border-color: #fc9220;
-            background: linear-gradient(135deg, #1A1A1A 0%, #2a1a10 100%);
-            position: relative;
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: #fc9220;
-            color: #fff;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .plan-name {
-            font-size: 1.5rem;
-            font-weight: 600;
+        .feature-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        .plan-price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fc9220;
-            margin-bottom: 0.5rem;
+        .feature-card h3 {
+            color: #fd931f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        .plan-price span {
-            font-size: 1.2rem;
-            color: #999;
+        .feature-card p {
+            color: #cccccc;
+            line-height: 1.8;
         }
 
-        .plan-features {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .plan-features li {
-            padding: 0.75rem 0;
-            color: #ccc;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .plan-features li:before {
-            content: "✓";
-            color: #fc9220;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Final CTA */
-        .final-cta {
-            padding: 8rem 2rem;
+        .section-title {
             text-align: center;
-            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fd931f;
         }
 
-        .final-cta h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.2;
+        .section-subtitle {
+            text-align: center;
+            color: #999999;
+            font-size: 1.1rem;
         }
 
-        /* Footer */
         footer {
-            background: #0a0a0a;
+            background: rgba(26, 20, 16, 0.95);
             padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid #1A1A1A;
+            border-top: 1px solid rgba(253, 147, 31, 0.1);
         }
 
         .footer-links {
             display: flex;
-            gap: 2rem;
             justify-content: center;
-            flex-wrap: wrap;
+            gap: 2rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: #999;
+            color: #cccccc;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: #fc9220;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            color: #999;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #fc9220;
+            color: #fd931f;
         }
 
         .copyright {
-            color: #666;
+            color: #666666;
             font-size: 0.9rem;
-            margin-top: 2rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
+            h1 {
+                font-size: 2.5rem;
             }
 
-            nav .logo img {
-                height: 28px;
+            .tagline {
+                font-size: 1.2rem;
             }
 
-            nav .nav-cta img {
-                height: 35px;
+            .nav-links {
+                gap: 1rem;
             }
 
-            .feature-section {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 4rem 2rem;
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
             }
 
-            .feature-section.reverse {
-                direction: ltr;
-            }
-
-            .feature-image img {
-                max-width: 280px;
-            }
-
-            .hero-phone img {
-                max-width: 90%;
-            }
-
-            .stats-grid {
+            .features-grid {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">
-                <img src="images/logo-text.png" alt="Lifted">
+            <a href="/" class="logo">🏋️ LIFTED</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/collab">Become an Athlete</a>
             </div>
-            <a href="https://apple.co/3MpF6Md" class="nav-cta"><img src="images/CTA.png" alt="Download on the App Store"></a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Miss a workout.<br>Lose everything.</h1>
-            <p class="subtitle">Group accountability with real consequences. Stay consistent or start over.</p>
-            <a href="https://apple.co/3MpF6Md" class="cta-button"><img src="images/CTA.png" alt="Download on the App Store"></a>
-            <div class="hero-phone">
-                <img src="images/phones.png" alt="Lifted App - Character Screen and Check-in Feed">
+            <h1>Your Fitness Journey, Elevated</h1>
+            <p class="tagline">Group accountability that actually works. Track workouts, stay consistent, and level up together.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/app/lifted-fitness-accountability/id6738301722" class="btn btn-primary">Download on App Store</a>
+                <a href="/collab" class="btn btn-secondary">Partner With Us</a>
             </div>
         </div>
     </section>
 
-    <!-- Feature 1 -->
-    <section class="feature-section">
-        <div class="feature-content">
-            <h2>Your Crew is Counting on You</h2>
-            <p>Create groups with friends. Everyone checks in daily. Miss once and your whole group resets to Level 1. Real stakes, real results.</p>
-        </div>
-        <div class="feature-image">
-            <img src="images/screen2.png" alt="Group Members Screen">
-        </div>
-    </section>
-
-    <!-- Feature 2 -->
-    <section class="feature-section reverse">
-        <div class="feature-content">
-            <h2>Build Your Perfect Split</h2>
-            <p>Create custom workout routines from 300+ exercises. PPL, Bro Split, Upper/Lower - design exactly what you need.</p>
-        </div>
-        <div class="feature-image">
-            <img src="images/screen3.png" alt="Routines Page">
-        </div>
-    </section>
-
-    <!-- Feature 3 -->
-    <section class="feature-section">
-        <div class="feature-content">
-            <h2>Track Every Rep</h2>
-            <p>Log sets, reps, and weight for every exercise. Watch your numbers grow. Share your workouts with your group.</p>
-        </div>
-        <div class="feature-image">
-            <img src="images/screen4.png" alt="Workout Logging Screen">
-        </div>
-    </section>
-
-    <!-- Feature 4 -->
-    <section class="feature-section reverse">
-        <div class="feature-content">
-            <h2>Prove It Every Day</h2>
-            <p>Daily photo check-ins with unique prompts. Share your progress, react to your crew's check-ins, and keep each other motivated.</p>
-        </div>
-        <div class="feature-image">
-            <img src="images/screen5.png" alt="Feed Check-in Screen">
-        </div>
-    </section>
-
-    <!-- Feature 5 -->
-    <section class="feature-section">
-        <div class="feature-content">
-            <h2>Never Miss Your Stack</h2>
-            <p>Track supplements and vitamins. Set reminders. Stay dialed in on and off the gym floor.</p>
-        </div>
-        <div class="feature-image">
-            <img src="images/screen6.png" alt="Supplement Tracking">
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats fade-in">
-        <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Built Different</h2>
-        <p class="subtitle">Real results from real users</p>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">87%</div>
-                <div class="stat-label">Daily Retention</div>
+    <section class="features">
+        <h2 class="section-title">Why Lifted?</h2>
+        <p class="section-subtitle">Built for real people who want real results</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Group Accountability</h3>
+                <p>Stay motivated with friends. Share daily check-ins, workouts, and progress. Your group's success is your success.</p>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">250+</div>
-                <div class="stat-label">Downloads First Week</div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <h3>Gamified Progress</h3>
+                <p>Watch your group's character level up as everyone stays consistent. Skip days? It shows. Stay committed? Level up together.</p>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">4</div>
-                <div class="stat-label">Average Workouts Per Week</div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Track Everything</h3>
+                <p>Log workouts, track nutrition, hit your macros. Complete suite of tools to monitor every aspect of your fitness journey.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>Daily Check-ins</h3>
+                <p>Snap a selfie, share your progress. Real accountability from real people who care about your goals.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Streak System</h3>
+                <p>Build momentum. Every day you show up counts. Break your streak and feel the consequences—together.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🍎</div>
+                <h3>Nutrition Tracking</h3>
+                <p>AI meal scanning, barcode scanner, macro tracking. Hit your goals with tools that actually work.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing fade-in">
-        <h2>Simple Pricing</h2>
-        <p class="pricing-subtitle">Start free. Upgrade when you're ready.</p>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="plan-name">Free</div>
-                <div class="plan-price">$0<span>/forever</span></div>
-                <ul class="plan-features">
-                    <li>1 group (5 people)</li>
-                    <li>Daily check-ins</li>
-                    <li>Full workout tracker</li>
-                    <li>300+ exercises</li>
-                    <li>Lose everything if you miss</li>
-                </ul>
-            </div>
-            <div class="pricing-card featured">
-                <span class="featured-badge">MOST POPULAR</span>
-                <div class="plan-name">Lifted Revive</div>
-                <div class="plan-price">$4.99<span>/month</span></div>
-                <ul class="plan-features">
-                    <li>Everything in Free</li>
-                    <li>1 character revive/month</li>
-                    <li>Custom frames & backgrounds</li>
-                    <li>Exclusive character skins</li>
-                    <li>Custom reactions</li>
-                    <li>Premium support</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta fade-in">
-        <h2>Stop Making Excuses.<br>Start Staying Accountable.</h2>
-        <p class="subtitle" style="margin-bottom: 2rem;">Your crew is waiting.</p>
-        <a href="https://apple.co/3MpF6Md" class="cta-button"><img src="images/CTA.png" alt="Download on the App Store"></a>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <a href="https://hs382001-alt.github.io/lifted-legal/privacy.html">Privacy Policy</a>
-            <a href="https://hs382001-alt.github.io/lifted-legal/terms.html">Terms of Service</a>
-            <a href="https://hs382001-alt.github.io/lifted-legal/support.html">Support</a>
-        </div>
-        <div class="social-links">
-            <a href="https://instagram.com/theliftedapp">Instagram @theliftedapp</a>
-            <span style="color: #666;">|</span>
-            <a href="https://tiktok.com/@liftedapp">TikTok @liftedapp</a>
-        </div>
-        <div style="margin: 1.5rem 0; color: #999;">
-            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="234f4a455746474253534a4c5063444e424a4f0d404c4e">[email&#160;protected]</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:liftedappios@gmail.com">Contact</a>
         </div>
         <p class="copyright">© 2026 Lifted. All rights reserved.</p>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all feature sections and fade-in elements
-        document.querySelectorAll('.feature-section, .fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEve
+</body>
+</html>
