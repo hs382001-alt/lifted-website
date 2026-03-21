@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lifted - Fitness Accountability Done Right</title>
-    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="icon" type="image/png" href="images/icon.png">
     <style>
         * {
             margin: 0;
@@ -14,20 +14,20 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1a1410 0%, #2d2419 100%);
+            background: #0a0a0a;
             color: #ffffff;
             overflow-x: hidden;
         }
 
         .navbar {
-            background: rgba(26, 20, 16, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(253, 147, 31, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-content {
@@ -53,7 +53,7 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #fd931f;
+            color: #FF7E00;
         }
 
         .nav-links {
@@ -70,7 +70,7 @@
         }
 
         .nav-links a:hover {
-            color: #fd931f;
+            color: #FF7E00;
         }
 
         .hero {
@@ -86,9 +86,9 @@
         .hero::before {
             content: '';
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(253, 147, 31, 0.15) 0%, transparent 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 126, 0, 0.1) 0%, transparent 70%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -114,16 +114,13 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fd931f 0%, #ffa940 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
             line-height: 1.2;
         }
 
         .hero-text p {
             font-size: 1.3rem;
-            color: #cccccc;
+            color: #999999;
             margin-bottom: 2rem;
             line-height: 1.6;
         }
@@ -172,13 +169,13 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: #fd931f;
+            color: #FF7E00;
             margin-bottom: 1rem;
         }
 
         .section-header p {
             font-size: 1.2rem;
-            color: #999999;
+            color: #666666;
         }
 
         .features-grid {
@@ -188,8 +185,8 @@
         }
 
         .feature-card {
-            background: rgba(42, 37, 32, 0.6);
-            border: 1px solid rgba(253, 147, 31, 0.2);
+            background: #111111;
+            border: 1px solid #222222;
             border-radius: 20px;
             padding: 2rem;
             transition: transform 0.3s, border-color 0.3s;
@@ -197,7 +194,7 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(253, 147, 31, 0.5);
+            border-color: #FF7E00;
         }
 
         .feature-icon {
@@ -207,19 +204,19 @@
         }
 
         .feature-card h3 {
-            color: #fd931f;
+            color: #FF7E00;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         .feature-card p {
-            color: #cccccc;
+            color: #999999;
             line-height: 1.8;
         }
 
         .screenshots {
             padding: 5rem 2rem;
-            background: rgba(42, 37, 32, 0.3);
+            background: #050505;
         }
 
         .screenshots-container {
@@ -252,10 +249,10 @@
         }
 
         footer {
-            background: rgba(26, 20, 16, 0.95);
+            background: #0a0a0a;
             padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(253, 147, 31, 0.1);
+            border-top: 1px solid #222222;
         }
 
         .footer-links {
@@ -267,17 +264,17 @@
         }
 
         .footer-links a {
-            color: #cccccc;
+            color: #666666;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: #fd931f;
+            color: #FF7E00;
         }
 
         .copyright {
-            color: #666666;
+            color: #333333;
             font-size: 0.9rem;
         }
 
@@ -323,7 +320,7 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="/" class="logo-link">
-                <img src="assets/icon.png" alt="Lifted Logo" class="logo">
+                <img src="images/icon.png" alt="Lifted Logo" class="logo">
                 <span class="logo-text">LIFTED</span>
             </a>
             <div class="nav-links">
@@ -339,16 +336,16 @@
                 <h1>Your Fitness Journey, Elevated</h1>
                 <p>Group accountability that actually works. Track together, stay consistent, and level up as one.</p>
                 <div class="download-buttons">
-                    <a href="https://apps.apple.com/app/lifted-fitness-accountability/id6738301722" class="store-button">
-                        <img src="assets/appstore.svg" alt="Download on App Store">
+                    <a href="https://apps.apple.com/us/app/lifted-fitness-accountability/id6738301722" class="store-button">
+                        <img src="images/appstore.svg" alt="Download on App Store">
                     </a>
                     <!-- <a href="#" class="store-button">
-                        <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                        <img src="images/google-play-badge.png" alt="Get it on Google Play">
                     </a> -->
                 </div>
             </div>
             <div class="hero-mockup">
-                <img src="assets/mockup.png" alt="Lifted App Mockup" class="mockup-image">
+                <img src="images/mockup.png" alt="Lifted App Mockup" class="mockup-image">
             </div>
         </div>
     </section>
@@ -360,17 +357,17 @@
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <img src="assets/feature1.png" alt="Group Accountability" class="feature-icon">
+                <img src="images/feature1.png" alt="Group Accountability" class="feature-icon">
                 <h3>Group Accountability</h3>
                 <p>Stay motivated with friends. Share daily check-ins, workouts, and progress. Your group's success is your success.</p>
             </div>
             <div class="feature-card">
-                <img src="assets/feature2.png" alt="Gamified Progress" class="feature-icon">
+                <img src="images/feature2.png" alt="Gamified Progress" class="feature-icon">
                 <h3>Gamified Progress</h3>
                 <p>Watch your group's character level up as everyone stays consistent. Skip days? It shows. Stay committed? Level up together.</p>
             </div>
             <div class="feature-card">
-                <img src="assets/feature3.png" alt="Track Everything" class="feature-icon">
+                <img src="images/feature3.png" alt="Track Everything" class="feature-icon">
                 <h3>Track Everything</h3>
                 <p>Log workouts, track nutrition, hit your macros. Complete suite of tools to monitor every aspect of your fitness journey.</p>
             </div>
@@ -385,16 +382,16 @@
             </div>
             <div class="screenshots-grid">
                 <div class="screenshot">
-                    <img src="assets/ss1.png" alt="Lifted Screenshot 1">
+                    <img src="images/ss1.png" alt="Lifted Screenshot 1">
                 </div>
                 <div class="screenshot">
-                    <img src="assets/ss2.png" alt="Lifted Screenshot 2">
+                    <img src="images/ss2.png" alt="Lifted Screenshot 2">
                 </div>
                 <div class="screenshot">
-                    <img src="assets/ss3.png" alt="Lifted Screenshot 3">
+                    <img src="images/ss3.png" alt="Lifted Screenshot 3">
                 </div>
                 <div class="screenshot">
-                    <img src="assets/ss4.png" alt="Lifted Screenshot 4">
+                    <img src="images/ss4.png" alt="Lifted Screenshot 4">
                 </div>
             </div>
         </div>
@@ -402,8 +399,8 @@
 
     <footer>
         <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
+            <a href="https://hs382001-alt.github.io/lifted-legal/privacy.html">Privacy Policy</a>
+            <a href="https://hs382001-alt.github.io/lifted-legal/terms.html">Terms of Service</a>
             <a href="support.html">Support</a>
             <a href="mailto:liftedappios@gmail.com">Contact</a>
         </div>
