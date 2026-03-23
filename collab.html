@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifted Athletes - Partner With Us</title>
+    <title>Work With Lifted</title>
     <link rel="icon" type="image/png" href="images/icon.png">
     <style>
         * {
@@ -67,7 +67,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 6rem 2rem 4rem;
         }
@@ -87,128 +87,22 @@
         .hero p {
             font-size: 1.25rem;
             color: #999999;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto 2rem;
         }
 
-        .hero-image {
-            text-align: center;
-            margin-bottom: 4rem;
+        .form-container {
+            background: #111111;
+            border: 1px solid #222222;
+            border-radius: 16px;
+            padding: 2rem;
+            overflow: hidden;
         }
 
-        .hero-image img {
-            max-width: 600px;
+        .form-container iframe {
             width: 100%;
-            height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
-        }
-
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .benefit-card {
-            background: #111111;
-            border: 1px solid #222222;
-            border-radius: 16px;
-            padding: 2rem;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            border-color: #FF7E00;
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-card h3 {
-            color: #FF7E00;
-            margin-bottom: 0.5rem;
-            font-size: 1.25rem;
-        }
-
-        .benefit-card p {
-            color: #999999;
-            font-size: 0.95rem;
-        }
-
-        .commission-tiers {
-            background: #111111;
-            border: 2px solid #222222;
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .commission-tiers h2 {
-            text-align: center;
-            color: #FF7E00;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        .tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .tier {
-            background: #0a0a0a;
-            border: 1px solid #222222;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .tier-label {
-            color: #FF7E00;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .tier-rate {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 0.25rem;
-        }
-
-        .tier-desc {
-            color: #666666;
-            font-size: 0.85rem;
-        }
-
-        .booking-section {
-            background: #111111;
-            border: 1px solid #222222;
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .booking-section h2 {
-            text-align: center;
-            color: #FF7E00;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-
-        .booking-section > p {
-            text-align: center;
-            color: #999999;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            border: none;
+            min-height: 1871px;
         }
 
         @media (max-width: 768px) {
@@ -220,14 +114,6 @@
                 font-size: 1rem;
             }
 
-            .hero-image img {
-                max-width: 100%;
-            }
-
-            .benefits {
-                grid-template-columns: 1fr;
-            }
-
             .nav-links {
                 gap: 1rem;
                 font-size: 0.9rem;
@@ -237,16 +123,8 @@
                 padding: 5rem 1rem 2rem;
             }
 
-            .commission-tiers {
-                padding: 1.5rem;
-            }
-
-            .tiers {
-                grid-template-columns: 1fr;
-            }
-
-            .booking-section {
-                padding: 1.5rem;
+            .form-container {
+                padding: 1rem;
             }
         }
 
@@ -268,12 +146,8 @@
                 font-size: 1.75rem;
             }
 
-            .benefit-icon {
-                font-size: 2rem;
-            }
-
-            .tier-rate {
-                font-size: 2rem;
+            .form-container {
+                padding: 0.5rem;
             }
         }
     </style>
@@ -286,76 +160,19 @@
             </a>
             <div class="nav-links">
                 <a href="/">Home</a>
-                <a href="/collab">Become an Athlete</a>
+                <a href="/collab">Work With Us</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
         <div class="hero">
-            <h1>Build your community. Get paid for it.</h1>
-            <p>Partner with us to inspire your community, earn competitive commissions, and shape the future of fitness accountability.</p>
+            <h1>Work With Lifted</h1>
+            <p>Interested in creating fitness content with us? Fill out the form below and we'll be in touch.</p>
         </div>
 
-        <div class="hero-image">
-            <img src="images/phones.png" alt="Lifted App">
-        </div>
-
-        <div class="benefits">
-            <div class="benefit-card">
-                <div class="benefit-icon">💰</div>
-                <h3>Competitive Revenue Share</h3>
-                <p>Earn up to 50% commission on every conversion. The more you grow, the more you earn.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🎨</div>
-                <h3>Exclusive Custom Character</h3>
-                <p>Get your own branded character in-app. Your followers unlock it exclusively through your code.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">📱</div>
-                <h3>Social Media Exposure</h3>
-                <p>Featured across our Instagram, TikTok, and YouTube Shorts. We'll amplify your reach to our growing community.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🤝</div>
-                <h3>Product Partnership</h3>
-                <p>Direct input on new features and updates. Help us build what your audience actually wants.</p>
-            </div>
-        </div>
-
-        <div class="commission-tiers">
-            <h2>Commission Structure</h2>
-            <div class="tiers">
-                <div class="tier">
-                    <div class="tier-label">STARTER</div>
-                    <div class="tier-rate">30%</div>
-                    <div class="tier-desc">1-5 conversions/month</div>
-                </div>
-                <div class="tier">
-                    <div class="tier-label">GROWING</div>
-                    <div class="tier-rate">40%</div>
-                    <div class="tier-desc">6-20 conversions/month</div>
-                </div>
-                <div class="tier">
-                    <div class="tier-label">ELITE</div>
-                    <div class="tier-rate">50%</div>
-                    <div class="tier-desc">21+ conversions/month</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="booking-section">
-            <h2>Ready to Partner?</h2>
-            <p>Book a quick call to discuss the partnership, get your custom character designed, and start earning.</p>
-            
-            <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/liftedappios/30min?primary_color=fd931f" style="min-width:320px;height:700px;"></div>
-            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            <!-- Calendly inline widget end -->
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdupRflAe8CaZifCQ3uMv_lmY9DkNmP_SxzUd0F9j99CVxMRQ/viewform?embedded=true" width="640" height="1871" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
 </body>
